@@ -3,16 +3,24 @@
 <head>
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    img#imagePreview {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 </head>
 <body>
 
 <h1>This is a Heading</h1>
 <p>This is a paragraph.</p>
-<p><input type="file" accept="camera/*" capture="camera" value="拍照"></p>
-<p><input type="file" accept="image/*" capture="camera" value="拍照"></p>
-<p><input type="file" accept="image/*" value="上传照片"></p>
-<p><input type="file" accept="image/*,application/pdf" id="inputFile"></input></p>
+<p><input type="file" accept="camera/*" capture="camera" value="拍照" onchange="previewImage(this)"></p>
+<p><input type="file" accept="image/*" capture="camera" value="拍照" onchange="previewImage(this)"></p>
+<p><input type="file" accept="image/*" value="上传照片" onchange="previewImage(this)"></p>
+<p><input type="file" accept="image/*,application/pdf" id="inputFile" onchange="previewImage(this)"></input></p>
 
+<!-- 图片预览区域 -->
+<img id="imagePreview" src="" alt="Image preview...">
 
 <p> </p>
 <button type="button" onclick="openApp()">App 打开</button>
@@ -28,6 +36,20 @@
         var url = "laapp://la.im.chat?params={\"conversationId\":\"c9efbdb074d3a4b71b5d0213726deb859\",\"shareTitle\":\"测试标题\",\"shareDesc\":\"测试desc\",\"shareImg\":\"https://placekitten.com/200/200\",\"shareUrl\":\"https://www.baidu.com\"}";
         window.location.href = url;
     }
+    function previewImage(input) {
+        // 检查是否有文件被选中
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            // 文件读取完成后，将其显示在img元素中
+            reader.onload = function (e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            };
+
+            // 读取选中的文件
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 </body>
-</html> 
+</html>
