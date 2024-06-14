@@ -26,8 +26,14 @@
 <button type="button" onclick="openApp()">App 打开</button>
 <p> </p>    
 <button type="button" onclick="sendMsg()">发送消息</button>
-
+<p> </p>
+<button type="button" onclick="openGuomin()">打开国民</button>
+<p> </p>    
 <script>
+    function openGuomin() {
+        var url = "guomin://start";
+        window.location.href = url;
+    }
     function openApp() {
         var url = "laapp://la.live?params={\"webinarId\":\"100042195\",\"type\":\"5\",\"id\":\"26\",\"name\":\"测试\",\"pic\":\"\",\"master\":\"github\"}";
         window.location.href = url;
