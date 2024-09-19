@@ -44,6 +44,10 @@ const SDK = {
     });
   },
 
+  popToHomePage() {
+    this.SDK('popToHomePage', {}, () => { });
+  }
+
   // 其他方法的实现...
 
   SDK(event, params, cb) {
