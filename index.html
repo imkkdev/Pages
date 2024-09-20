@@ -81,7 +81,15 @@
             window.prompt(JSON.stringify(paramsObj));
         }
         function popHome() {
-            SDK.popToHomePage();
+            // SDK.popToHomePage();
+            console.log('popHome >>>');
+            const paramsObj = {
+                functionName: 'popToHomePage',
+                params: {},
+                complete: 'cbName'
+            };
+            console.log(JSON.stringify(paramsObj));
+            window.prompt(JSON.stringify(paramsObj));
         }
     </script>
 </body>
