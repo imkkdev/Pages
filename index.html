@@ -90,6 +90,16 @@
             console.log(JSON.stringify(paramsObj));
             window.prompt(JSON.stringify(paramsObj));
         }
+        function navigateToZAService() {
+            console.log('navigateToZAService >>>');
+            const paramsObj = {
+                functionName: 'navigateToZAService',
+                params: {"url":"zaapp://zai.gotowebview?params={\"laShowNavigationBar\":\"1\",\"url\":\"https://pages-7l1.pages.dev\"}"},
+                complete: 'cbName'
+            };
+            console.log(JSON.stringify(paramsObj));
+            window.prompt(JSON.stringify(paramsObj));
+        }
     </script>
 </body>
 
