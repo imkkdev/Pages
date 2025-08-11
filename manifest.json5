@@ -1,0 +1,29 @@
+{
+  "app": {
+    "bundleName": "mth.bluepasshealth.care2pay",
+    "bundleType": "app",
+    "versionCode": 1000000,
+    "versionName": "1.0.0",
+    "label": "DemoA",
+    "deployDomain": "pages-7l1.pages.dev",
+    "icons": {
+      "normal": "标准图标下载链接",
+      "large": "大图标下载链接"
+    },
+    "minAPIVersion": "4.1.0(11)",
+    "targetAPIVersion": "4.1.0(11)",
+    "modules": [
+      {
+        "name": "module1",
+        "type": "entry",
+        "deviceTypes": [
+          "tablet",
+          "phone"
+        ],
+        "packageUrl": "https://pages-7l1.pages.dev/entry-default-signed.hap",
+        "packageHash": "HAP包sha256值"
+      }
+    ]
+  },
+   "sign": "描述文件签名"
+}
